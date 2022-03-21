@@ -21,7 +21,7 @@ public class PhoneBook {
     }
 
     public PhoneBook() {
-        this(null);
+        this(new LinkedHashMap<>());
     }
 
     public void add(String name, String phoneNumber) {
