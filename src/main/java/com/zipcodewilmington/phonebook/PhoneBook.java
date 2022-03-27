@@ -31,13 +31,19 @@ public class PhoneBook {
     }
 
     public void addAll(String name, String... phoneNumbers) {
+        List<String> addAllPhonebook = new ArrayList<>();
+        for (int i = 0; i < phoneNumbers.length; i ++){
+            addAllPhonebook.add(phoneNumbers[i]);
+        }
+        phonebook.put(name, addAllPhonebook);
     }
 
     public void remove(String name) {
+        phonebook.remove(name);
     }
 
     public Boolean hasEntry(String name) {
-        return null;
+        return phonebook.containsKey(name);
     }
 
     public List<String> lookup(String name) {
