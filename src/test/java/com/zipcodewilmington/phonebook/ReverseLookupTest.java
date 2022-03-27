@@ -6,18 +6,18 @@ import org.junit.Test;
 public class ReverseLookupTest {
     @Test
     public void test1() {
-        // given
+        // Given
         PhoneBook phoneBook = new PhoneBook();
         String expectedName = "John";
         String phoneNumber = "302-555-4545";
         phoneBook.add(expectedName, phoneNumber);
-        Assert.assertTrue(phoneBook.hasEntry(expectedName, phoneNumber)); //errors in Assert. Expected one string.
+        Assert.assertTrue(phoneBook.hasEntry(expectedName)); //errors in Assert. Expected one string.
         // 2 given under expectedName and phoneNumber.
 
-        // when
+        // When
         String actualName = phoneBook.reverseLookup(phoneNumber);
 
-        // then
+        // Then
         Assert.assertEquals(expectedName, actualName);
     }
 
@@ -28,7 +28,7 @@ public class ReverseLookupTest {
         String expectedName = "Joe";
         String phoneNumber = "302-554-4545";
         phoneBook.add(expectedName, phoneNumber);
-        Assert.assertTrue(phoneBook.hasEntry(expectedName, phoneNumber));
+        Assert.assertTrue(phoneBook.hasEntry(expectedName));
 
         // when
         String actualName = phoneBook.reverseLookup(phoneNumber);
@@ -45,7 +45,7 @@ public class ReverseLookupTest {
         String expectedName = "Smith";
         String phoneNumber = "302-554-4535";
         phoneBook.add(expectedName, phoneNumber);
-        Assert.assertTrue(phoneBook.hasEntry(expectedName, phoneNumber));
+        Assert.assertTrue(phoneBook.hasEntry(expectedName));
 
         // when
         String actualName = phoneBook.reverseLookup(phoneNumber);

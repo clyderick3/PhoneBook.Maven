@@ -25,7 +25,9 @@ public class PhoneBook {
     }
 
     public void add(String name, String phoneNumber) {
-        phonebook.put(name.contains(phoneNumber));
+        List<String> addToPhonebook = new ArrayList<>();
+        addToPhonebook.add(phoneNumber);
+        phonebook.put(name, addToPhonebook);
     }
 
     public void addAll(String name, String... phoneNumbers) {
