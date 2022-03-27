@@ -16,15 +16,16 @@ public class PhoneBook {
     private final Map<String, List<String>> phonebook;
 
     public PhoneBook(Map<String, List<String>> map) {
-        this.phonebook = new LinkedHashMap<>();
-        this.phonebook.putAll(map);
+        this.phonebook = map;
     }
 
     public PhoneBook() {
-        this(new LinkedHashMap<>());
+        Map<String, List<String>> phonebook = new LinkedHashMap<>();
+        this.phonebook = phonebook;
     }
 
     public void add(String name, String phoneNumber) {
+        phonebook.put(name.contains(phoneNumber));
     }
 
     public void addAll(String name, String... phoneNumbers) {
